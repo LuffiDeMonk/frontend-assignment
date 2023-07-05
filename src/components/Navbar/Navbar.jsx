@@ -4,11 +4,15 @@ import Logo from "../../assets/img/logo.png";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaRegUser } from "react-icons/fa";
 import { RiShoppingCart2Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="h-20 border-b-2 border-gray-200 z-50 sticky w-full bg-white top-0 px-2 md:px-0">
-      <div className="max-w-screen-xl mx-auto h-full flex items-center justify-between">
+      <Link
+        to="/"
+        className="max-w-screen-xl mx-auto h-full flex items-center justify-between"
+      >
         <img src={Logo} alt="" className="h-10 object-cover cursor-pointer" />
         <ul className="hidden md:flex h-full items-center justify-start md:gap-4 lg:gap-12 md:w-[60%] mr-auto px-4 lg:pl-10">
           <li className="text-lg px-0.5 relative hover:font-bold duration-200 transition-all after:absolute after:content-[''] after:h-0.5 after:bg-red-600 after:bottom-0 after:w-0 after:rounded-full after:left-0 after:duration-300 after:transition-all after:hover:w-full cursor-pointer ease-in">
@@ -48,7 +52,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <AiOutlineMenu size={30} />
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
