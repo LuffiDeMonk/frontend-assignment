@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import { useParams } from "react-router-dom";
@@ -151,12 +152,15 @@ const ProductDetails = () => {
             -
           </button>
         </div>
-        <button className="w-40 h-12 text-orange-400 hover:text-white hover:bg-orange-400 border border-orange-400 flex items-center justify-center gap-4 transition-colors duration-200">
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          className="w-40 h-12 outline-none focus:outline-none text-orange-400 hover:text-white hover:bg-orange-400 border border-orange-400 flex items-center justify-center gap-4 transition-colors duration-200"
+        >
           <BiCart size={25} />
           <span className="text-md" onClick={handleCart}>
             Add to cart
           </span>
-        </button>
+        </motion.button>
       </div>
     </div>
   );

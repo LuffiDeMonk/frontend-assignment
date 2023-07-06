@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { categoryOptions } from "../imageArray";
 import ProductCard from "../ProductCard/ProductCard";
 import { getProductByCategory } from "../../utils/GetProducts";
+import ProductCardLoading from "../ProductCard/ProductCardLoading";
 
 const FeaturedProducts = () => {
   const [category, setCategory] = useState("smartphones");
@@ -11,7 +12,7 @@ const FeaturedProducts = () => {
       <div className="text-2xl md:text-3xl font-bold px-2 md:px-0">
         Featured Products
       </div>
-      <div className="h-12 flex items-center gap-x-10 overflow-scroll scrollbar-none px-2 md:px-0 cursor-grab">
+      <div className="h-12 flex items-center gap-x-10 overflow-scroll scrollbar-none px-2 md:px-0">
         {categoryOptions.map((item, index) => (
           <li
             key={index}
@@ -23,7 +24,10 @@ const FeaturedProducts = () => {
         ))}
       </div>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-        {isLoading && <h1 className="text-md">Loading</h1>}
+        {isLoading &&
+          Array(5)
+            .fill(0)
+            .map((item) => <ProductCardLoading />)}
         {data?.map((item) => (
           <ProductCard key={item.description} data={item} />
         ))}
