@@ -1,14 +1,22 @@
 import React from "react";
 import Herosection from "../components/HeroSection/Herosection";
-import ProductCategory from "../components/ProductCategory/ProductCategory";
 import FeaturedProducts from "../components/FeaturedProducts/FeaturedProducts";
+import { bestOfferCategory, categoryOptions } from "../components/imageArray";
 
 const HomePage = () => {
   return (
     <div>
       <Herosection />
-      <ProductCategory />
-      <FeaturedProducts />
+      <FeaturedProducts
+        title="Featured Products"
+        categoryOptions={categoryOptions}
+        initial="smartphones"
+      />
+      <FeaturedProducts
+        title="Best Deal of The Day"
+        categoryOptions={bestOfferCategory}
+        initial="womens-dresses"
+      />
     </div>
   );
 };

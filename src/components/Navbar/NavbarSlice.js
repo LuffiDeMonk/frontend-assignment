@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isCartOpen: false,
+  isMobileMenu: false,
 };
 
 const NavbarSlice = createSlice({
@@ -11,8 +12,11 @@ const NavbarSlice = createSlice({
     setCartOpen: (state) => {
       state.isCartOpen = !state.isCartOpen;
     },
+    setMobileMenu: (state) => {
+      state.isMobileMenu = !state.isMobileMenu;
+    },
   },
 });
 
-export const { setCartOpen } = NavbarSlice.actions;
+export const { setCartOpen, setMobileMenu } = NavbarSlice.actions;
 export default NavbarSlice.reducer;

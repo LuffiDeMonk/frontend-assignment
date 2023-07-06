@@ -7,15 +7,16 @@ import ProductCard from "../components/ProductCard/ProductCard";
 const SearchPage = () => {
   const params = useParams();
   const { searchTerm } = params;
-  const { searchData, searching, searchError } = getSearchProduct(searchTerm);
+  const { searchData, searching } = getSearchProduct(searchTerm);
   return (
     <div className="max-w-screen-xl mx-auto">
-      {searchError === false ? (
+      {/* to check if the search data is present. If there is no data, a fallback */}
+      {searchData?.data?.products?.length === 0 ? (
         <div className="w-full h-screen flex items-center justify-center mx-auto">
           <img
-            src="https://www.shutterstock.com/image-vector/no-data-result-not-found-600w-2043800576.jpg"
+            src="https://www.shutterstock.com/image-vector/no-data-vector-outline-icon-600w-2082716953.jpg"
             alt=""
-            className="w-96 h-96 object-contain"
+            className="w-80 h-80 object-contain"
           />
         </div>
       ) : (

@@ -1,16 +1,8 @@
-import image1 from "../assets/img/categories/cat-1.jpg";
-import image2 from "../assets/img/categories/cat-2.jpg";
-import image3 from "../assets/img/categories/cat-3.jpg";
-import image4 from "../assets/img/categories/cat-4.jpg";
-import image5 from "../assets/img/categories/cat-5.jpg";
-
 import SliderOne from "../assets/images/cat-1.jpg";
 import SliderTwo from "../assets/images/cat-2.jpg";
 import SliderThree from "../assets/images/cat-3.jpg";
 import SliderFour from "../assets/images/cat-4.jpg";
-
-export const productImage = [image1, image2, image3, image4, image5];
-
+//images for the carousel section in the homepage
 export const SliderImages = [
   {
     id: 1,
@@ -39,4 +31,14 @@ export const categoryOptions = [
   "tops",
   "motorcycle",
   "lighting",
+];
+
+export const bestOfferCategory = [
+  "womens-dresses",
+  "mens-shirts",
+  "mens-shoes",
+  "mens-watches",
+  "womens-watches",
+  "womens-bags",
+  "sunglasses",
 ];
