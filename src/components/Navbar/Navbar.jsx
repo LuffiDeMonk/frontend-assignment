@@ -41,7 +41,7 @@ const Navbar = () => {
           <motion.div
             onClick={() => dispatch(setCartOpen())}
             whileTap={{ scale: 0.5 }}
-            className="cursor-pointer relative outline-none focus:outline-none"
+            className="cursor-pointer relative outline-none focus:outline-none block"
           >
             <RiShoppingCart2Line size={25} />
             <div className="absolute -top-2 -right-2 w-5 h-5 full bg-blue-700 rounded-full text-white text-[10px] flex items-center justify-center">

@@ -3,10 +3,15 @@ import { BiArrowBack } from "react-icons/bi";
 import { motion } from "framer-motion";
 import Logo from "../../assets/images/Logo.png";
 import Search from "../Search/Search";
-import { setMobileMenu } from "../Navbar/NavbarSlice";
+import { setCartOpen, setMobileMenu } from "../Navbar/NavbarSlice";
+import { useDispatch } from "react-redux";
 
 const MobileMenu = () => {
   const dispatch = useDispatch();
+  const showCart = () => {
+    dispatch(setMobileMenu());
+    dispatch(setCartOpen());
+  };
   return (
     <motion.div
       initial={{ x: -500 }}
@@ -25,6 +30,12 @@ const MobileMenu = () => {
         </div>
       </div>
       <Search />
+      <div
+        className="text-md font-semibold mt-12 py-2 bg-blue-400 text-white text-center rounded-md w-32"
+        onClick={showCart}
+      >
+        My Cart
+      </div>
     </motion.div>
   );
 };

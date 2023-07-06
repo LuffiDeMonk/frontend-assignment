@@ -15,7 +15,7 @@ const CartCard = ({ data }) => {
       className="flex items-center mx-3 gap-1 border border-gray-100 py-5 px-3"
     >
       <img src={data?.image} alt="" className="w-16 h-16 object-cover" />
-      <h2 className="text-sm w-56 whitespace-nowrap overflow-hidden text-ellipsis">
+      <h2 className="text-sm w-40 md:w-56 whitespace-nowrap overflow-hidden text-ellipsis">
         {data?.title}
       </h2>
       <div className="flex w-32 h-6 items-center">
