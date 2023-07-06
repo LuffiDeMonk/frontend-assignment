@@ -1,6 +1,6 @@
 const ProductCardLoading = () => {
   return (
-    <div className="h-[20rem] border border-red-300 p-2 space-y-4">
+    <div className="h-[20rem] border border-gray-200 rounded-md p-2 space-y-4">
       <div className="w-full h-52 overflow-hidden border border-gray-100">
         <div className="w-full h-full bg-gray-400 animate-pulse"></div>
       </div>

@@ -12,6 +12,7 @@ import Search from "../Search/Search";
 const Navbar = () => {
   const dispatch = useDispatch();
   const isCartOpen = useSelector((state) => state.navbar.isCartOpen);
+  const totalQuantity = useSelector((state) => state.cart.totalItems);
   return (
     <div className="h-20 border-b-2 border-gray-200 z-50 sticky w-full bg-white top-0 px-2 md:px-0">
       <div className="max-w-screen-xl mx-auto h-full flex items-center justify-between">
@@ -38,7 +39,7 @@ const Navbar = () => {
           >
             <RiShoppingCart2Line size={25} />
             <div className="absolute -top-2 -right-2 w-5 h-5 full bg-blue-700 rounded-full text-white text-[10px] flex items-center justify-center">
-              4
+              {totalQuantity}
             </div>
           </motion.div>
           <motion.div

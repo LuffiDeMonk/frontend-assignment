@@ -26,7 +26,9 @@ const ProductDetails = () => {
       image: data?.images[0],
       quantity: count,
       price: discountedPrice(data?.price, data?.discountPercentage) * count,
+      unitPrice: discountedPrice(data?.price, data?.discountPercentage),
     };
+    console.log(cart.price);
     dispatch(addToCart(cart));
   };
 

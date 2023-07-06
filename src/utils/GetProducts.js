@@ -12,11 +12,27 @@ const singleProduct = async (id) => {
   return data;
 };
 
+const searchProduct = async (term) => {
+  const response = await getProductData.get(`/search?q=${term}`);
+  return response;
+};
+
 export const getSingleProduct = (id) => {
   const { data: product } = useQuery(["product", id], () => singleProduct(id), {
     refetchOnWindowFocus: false,
   });
   return product;
+};
+
+export const getSearchProduct = (term) => {
+  const {
+    data: searchData,
+    isLoading: searching,
+    isError: searchError,
+  } = useQuery(["search", term], () => searchProduct(term), {
+    refetchOnWindowFocus: false,
+  });
+  return { searchData, searching, searchError };
 };
 
 export const getProductByCategory = (category) => {

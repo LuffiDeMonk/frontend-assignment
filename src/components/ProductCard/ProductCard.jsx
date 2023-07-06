@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ data }) => {
   return (
-    <div className="h-[20rem] border border-red-300 p-2">
+    <Link
+      to={`/${data?.category}/${data?.id}`}
+      className="h-[20rem] border border-gray-200 rounded-md p-2 duration-200 transition-all md:hover:shadow-xl"
+    >
       <div className="w-full h-52 overflow-hidden border border-gray-100">
         <img
           src={data?.images[0]}
@@ -12,9 +15,9 @@ const ProductCard = ({ data }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <Link to={`/${data?.category}/${data?.id}`} className="text-lg font-bold">
+      <div className="text-lg font-bold w-56 whitespace-nowrap capitalize overflow-hidden text-ellipsis">
         {data?.title}
-      </Link>
+      </div>
       <p className="text-sm font-light">{data?.brand}</p>
       <div className="flex gap-2 items-center">
         <span className="text-xl font-bold text-blue-500">Rs.{data.price}</span>
@@ -22,7 +25,7 @@ const ProductCard = ({ data }) => {
           Rs.300
         </span>
       </div>
-    </div>
+    </Link>
   );
 };
 
